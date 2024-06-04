@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 20:33:35 by zaldhahe          #+#    #+#             */
-/*   Updated: 2024/06/04 21:59:52 by zaldhahe         ###   ########.fr       */
+/*   Created: 2024/06/04 20:35:50 by zaldhahe          #+#    #+#             */
+/*   Updated: 2024/06/04 21:02:16 by zaldhahe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	main(int argc, char **argv)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_fractol fractol;
-	
-	if ((argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 11))
-		|| (argc == 4 && !ft_strncmp(argv[1], "julia", 6)))
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && i < n - 1 && s1[i] == s2[i])
+		i++;
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (s == NULL || fd < 0)
+		return ;
+	if (*s != '\0')
 	{
-		fractol.name = argv[1];
-		mlx_new_image(&fractol, 800, 800);
-		mlx_new_window(&fractol, 800, 800, "fractol");
-		mlx_loop(&fractol);
-		//rendering
-		//loop
+		write(fd, s, 1);
+		ft_putstr_fd(s + 1, fd);
 	}
-	else
-		ft_putstr_fd(ERROR_MSG, 1);
-	return (0);
 }
