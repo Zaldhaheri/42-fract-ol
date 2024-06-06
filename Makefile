@@ -6,13 +6,13 @@
 #    By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 20:33:51 by zaldhahe          #+#    #+#              #
-#    Updated: 2024/06/05 17:47:22 by zaldhahe         ###   ########.fr        #
+#    Updated: 2024/06/06 18:26:48 by zaldhahe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
-SRC = fractol.c arguments.c
+SRC = fractol.c arguments.c mandelbrot.c
 
 OBJ = $(SRC:.c=.o)
 

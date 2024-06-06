@@ -6,7 +6,7 @@
 /*   By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:30:11 by zaldhahe          #+#    #+#             */
-/*   Updated: 2024/06/05 18:58:18 by zaldhahe         ###   ########.fr       */
+/*   Updated: 2024/06/06 18:26:16 by zaldhahe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,22 @@ int check_args(int argc, char *argv[])
     return (1);
 }
 
-void get_values(int argc, char *argv[], t_fractol *f)
+void get_values(char *argv[], t_fractol *f)
 {
     if (!ft_strncmp("mandelbrot", argv[1], 11))
     {
-        mandelbrot(&f);
+        mandelbrot(f);
     }
-    else if (!ft_strncmp("julia", argv[1], 6) && argv[2] == "1")
-    {
-        julia1(&f);
-    }
-    else if (!ft_strncmp("julia", argv[1], 6) && argv[2] == "2")
-    {
-        julia2(&f);
-    }
-    else if (!ft_strncmp("julia", argv[1], 6) && argv[2] == "3")
-    {
-        julia3(&f);
-    }
+    // else if (!ft_strncmp("julia", argv[1], 6) && argv[2] == "1")
+    // {
+    //     julia1(&f);
+    // }
+    // else if (!ft_strncmp("julia", argv[1], 6) && argv[2] == "2")
+    // {
+    //     julia2(&f);
+    // }
+    // else if (!ft_strncmp("julia", argv[1], 6) && argv[2] == "3")
+    // {
+    //     julia3(&f);
+    // }
 }

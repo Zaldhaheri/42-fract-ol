@@ -6,7 +6,7 @@
 /*   By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 20:33:43 by zaldhahe          #+#    #+#             */
-/*   Updated: 2024/06/05 18:55:52 by zaldhahe         ###   ########.fr       */
+/*   Updated: 2024/06/06 22:27:23 by zaldhahe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,21 @@ typedef struct s_fractol
 	void *mlx;
 	void *win;
 	void *img;
-	
+	int *data_addr;
+	int color;
+	int bpp;
+	int size_l;
+	int endian;
+	double max_i;
+	double min_i;
+	double max_r;
+	double min_r;
+	double cur_x;
+	double cur_y;
 }	t_fractol;
 
 int check_args(int argc, char *argv[]);
+void get_values(char *argv[], t_fractol *f);
+void mandelbrot(t_fractol *f);
 
 #endif
