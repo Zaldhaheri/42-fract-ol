@@ -6,7 +6,7 @@
 /*   By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 18:58:26 by zaldhahe          #+#    #+#             */
-/*   Updated: 2024/06/06 23:21:10 by zaldhahe         ###   ########.fr       */
+/*   Updated: 2024/06/11 20:29:46 by zaldhahe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 // f->cur_y = 2 * f->cur_x * f->cur_y + f->max_i;
 // f->cur_x = xtemp;
 
+
+//problem: zooming in rerenders everything making zoom slow and oher key inputs slower.
 int get_n(t_fractol *f)
 {
     int i;
@@ -68,8 +70,8 @@ void mandelrender(t_fractol *f)
         y = 0;
         while (y < HEIGHT)
         {
-            f->cur_x = get_curr_x(x, f) * 1.1;
-            f->cur_y = get_curr_y(y, f) * 1.6;
+            f->cur_x = get_curr_x(x, f) * 1.2 * f->zoom;
+            f->cur_y = get_curr_y(y, f) * 1.8 * f->zoom;
             n = get_n(f);
             f->data_addr[y * WIDTH + x] = f->color * n;
             y++;
@@ -87,12 +89,11 @@ void mandelbrot(t_fractol *f)
     f->min_i = -1;
     f->max_r = 0.5;
     f->min_r = -2.0;
-    f->color = 0x010101;
+    f->zoom = 1;
+    f->color = 0x09;
     f->mlx = mlx_init();
     f->win = mlx_new_window(f->mlx, WIDTH, HEIGHT, "mandelbrot");
     f->img = mlx_new_image(f->mlx, WIDTH, HEIGHT);
     f->data_addr = (int *) mlx_get_data_addr(f->img, &f->bpp, &f->size_l, &f->endian);
     mandelrender(f);
 }
-
-

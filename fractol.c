@@ -6,7 +6,7 @@
 /*   By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 20:33:35 by zaldhahe          #+#    #+#             */
-/*   Updated: 2024/06/06 22:27:44 by zaldhahe         ###   ########.fr       */
+/*   Updated: 2024/06/11 20:22:21 by zaldhahe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void clear_struct(t_fractol *f)
 	f->endian = 0;
 }
 
+
 int	main(int argc, char *argv[])
 {
 	t_fractol f;
@@ -34,6 +35,8 @@ int	main(int argc, char *argv[])
 		return (0);
 	clear_struct(&f);
 	get_values(argv, &f);
-	
+	mlx_key_hook(f.win, key_hook, &f);
+	mlx_hook(f.win, 4, 0, mouse_hook, &f);
+	mlx_hook(f.win, 5, 0, mouse_hook, &f);
 	mlx_loop(f.mlx);
 }
