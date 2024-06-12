@@ -6,20 +6,19 @@
 #    By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 20:33:51 by zaldhahe          #+#    #+#              #
-#    Updated: 2024/06/11 19:33:22 by zaldhahe         ###   ########.fr        #
+#    Updated: 2024/06/12 20:15:00 by zaldhahe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
-SRC = fractol.c arguments.c mandelbrot.c hooks.c
+SRC = fractol.c arguments.c mandelbrot.c hooks.c julia.c
 
 OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra 
-
+CFLAGS = -Wall -Werror -Wextra -O3
 MLX = minilibx_opengl_20191021
 
 LIBFT = libft
