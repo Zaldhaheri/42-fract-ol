@@ -6,13 +6,20 @@
 /*   By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 20:33:35 by zaldhahe          #+#    #+#             */
-/*   Updated: 2024/06/12 18:54:17 by zaldhahe         ###   ########.fr       */
+/*   Updated: 2024/06/13 23:58:55 by zaldhahe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void clear_struct(t_fractol *f)
+void	fract_exit(t_fractol *f)
+{
+	mlx_destroy_image(f->mlx, f->img);
+	mlx_destroy_window(f->mlx, f->win);
+	exit(0);
+}
+
+void	clear_struct(t_fractol *f)
 {
 	f->fract = 0;
 	f->mlx = 0;
@@ -21,8 +28,8 @@ void clear_struct(t_fractol *f)
 	f->data_addr = 0;
 	f->cur_x = 0;
 	f->cur_y = 0;
-	f->prev_x = 0;
-	f->prev_y = 0;
+	f->old_x = 0;
+	f->old_y = 0;
 	f->new_x = 0;
 	f->new_y = 0;
 	f->bpp = 0;
@@ -30,7 +37,7 @@ void clear_struct(t_fractol *f)
 	f->endian = 0;
 }
 
-int destroy_mlx(t_fractol *f)
+int	destroy_mlx(t_fractol *f)
 {
 	mlx_destroy_image(f->mlx, f->img);
 	mlx_destroy_window(f->mlx, f->win);
@@ -38,11 +45,10 @@ int destroy_mlx(t_fractol *f)
 	return (0);
 }
 
-
 int	main(int argc, char *argv[])
 {
-	t_fractol f;
-	
+	t_fractol	f;
+
 	if (!check_args(argc, argv))
 		return (0);
 	clear_struct(&f);
