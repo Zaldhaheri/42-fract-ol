@@ -6,7 +6,7 @@
 /*   By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 20:33:35 by zaldhahe          #+#    #+#             */
-/*   Updated: 2024/06/13 23:58:55 by zaldhahe         ###   ########.fr       */
+/*   Updated: 2024/06/14 15:37:33 by zaldhahe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,5 @@ int	main(int argc, char *argv[])
 	mlx_hook(f.win, 4, 0, mouse_hook, &f);
 	mlx_hook(f.win, 17, 0, destroy_mlx, &f);
 	mlx_loop(f.mlx);
+	return (0);
 }

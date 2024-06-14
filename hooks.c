@@ -6,7 +6,7 @@
 /*   By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 19:11:55 by zaldhahe          #+#    #+#             */
-/*   Updated: 2024/06/14 00:12:03 by zaldhahe         ###   ########.fr       */
+/*   Updated: 2024/06/14 15:21:13 by zaldhahe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	move_hook(double x, double y, t_fractol *f)
 	}
 	else
 	{
-		f->mid_x += x / (f->zoom);
-		f->mid_y += y / (f->zoom);
+		f->mid_x += x;
+		f->mid_y += y;
 	}
 }
 

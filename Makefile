@@ -6,7 +6,7 @@
 #    By: zaldhahe <zaldhahe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 20:33:51 by zaldhahe          #+#    #+#              #
-#    Updated: 2024/06/12 20:15:00 by zaldhahe         ###   ########.fr        #
+#    Updated: 2024/06/14 16:18:46 by zaldhahe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -O3
+CFLAGS = -Wall -Werror -Wextra 
 MLX = minilibx_opengl_20191021
 
 LIBFT = libft
