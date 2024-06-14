@@ -21,7 +21,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra 
 MLX = minilibx_opengl_20191021
 
-LIBFT = libft
+LIBFT = Libft
 
 LINK = -lmlx -framework OpenGL -framework AppKit -L$(MLX)
 

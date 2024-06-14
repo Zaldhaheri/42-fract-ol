@@ -14,7 +14,7 @@
 # define FRACTOL_H
 
 # include "minilibx_opengl_20191021/mlx.h"
-# include "libft/libft.h"
+# include "Libft/libft.h"
 # include <unistd.h>
 # include <string.h>
 
